@@ -106,7 +106,7 @@ const Products = () => {
                   >
 
                     <p style={{ fontSize: "16px", color: "#333", margin: 0 }}>
-                      {product.price} JOD
+                      {product.price} USD
 
                     </p>
                     <ShoppingCartOutlined

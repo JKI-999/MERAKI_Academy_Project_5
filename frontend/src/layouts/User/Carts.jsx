@@ -179,8 +179,8 @@ const Carts = () => {
                       src={cart.image}
                       alt={`Image of ${cart.title}`}
                       style={{
-                        width: "150px",
-                        height: "150px",
+                        width: "200px",
+                        height: "250px",
                         objectFit: "cover",
                         borderRadius: "8px",
                       }}
