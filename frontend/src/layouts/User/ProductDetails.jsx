@@ -19,6 +19,7 @@ import {
 import { Card, Button, Container } from "react-bootstrap";
 import { message } from "antd";
 import { setCarts } from "../../Service/api/redux/reducers/user/carts";
+import Comments from "./Comment";
 const ProductDetails = () => {
   const dispatch = useDispatch();
   const { token, userId } = useSelector((state) => ({
@@ -113,8 +114,8 @@ const ProductDetails = () => {
           src={product[0].image}
           alt={product[0].title}
           style={{
-            width: "50%",
-            height: "auto",
+            width: "400px",
+            height: "400px",
             padding: "10px",
             objectFit: "cover",
           }}
@@ -158,9 +159,11 @@ const ProductDetails = () => {
                 <AiOutlineHeart style={{ fontSize: "30px", color: "gray" }} />
               )}
             </Button>
-          </div>
+          </div>  
         </Card.Body>
+     
       </Card>
+      <Comments/> 
     </Container>
   );
 };

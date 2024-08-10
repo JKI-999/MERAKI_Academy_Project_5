@@ -93,7 +93,7 @@ const FavoriteList = () => {
     <div style={{ backgroundColor: "#F5F5F5", padding: "20px" }}>
       <Row gutter={[10, 10]}>
         {products.map((product) => (
-          <Col key={product.id} xs={12} sm={8} md={6} lg={4}>
+          <Col key={product.id} xs={24} sm={12} md={8} lg={6}>
             <Card
               onClick={() => {
                 navigate(`/product/${product.id}`);
@@ -102,7 +102,13 @@ const FavoriteList = () => {
                 <img
                   alt={product.title}
                   src={product.image}
-                  style={{ height: "200px", width: "100%" }}
+                  style={{
+                    height: "220px",
+                    width: "100%",
+                    objectFit: "cover",
+                    borderRadius: "0px",
+                    cursor: "pointer",
+                  }}
                 />
               }
             >
@@ -114,19 +120,29 @@ const FavoriteList = () => {
                       display: "flex",
                       justifyContent: "space-between",
                       alignItems: "center",
+                      marginTop: "10px",
+
                     }}
                   >
-                    <p style={{ fontSize: "15px", paddingTop: "10px" }}>
-                      {product.price} JOD
+                  <p style={{ fontSize: "16px", color: "#333", margin: 0 }}>
+                      {product.price} USD
+
                     </p>
-                    <HeartFilled
+                    <HeartFilled  style={{
+                        fontSize: "30px",
+                        cursor: "pointer",
+                        marginLeft: '80px'}}
                       onClick={(e) => {
                         e.stopPropagation();
                         deleteFavorite(product);
                       }}
                     />
                     <ShoppingCartOutlined
-                      style={{ fontSize: "20px", cursor: "pointer" }}
+                      style={{
+                        fontSize: "30px",
+                        color: "#ff7f50",
+                        cursor: "pointer",
+                      }}
                       onClick={(e) => {
                         e.stopPropagation();
                         createNewCart(product);
